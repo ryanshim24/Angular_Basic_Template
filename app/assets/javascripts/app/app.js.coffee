@@ -8,12 +8,7 @@ app = angular.module("app", [
   "ngRoute"
 ])
 
-app.filter("reverse", () ->
-  (input) ->
-    console.log input
-    input.split("").reverse().join("")
-)
-
+# ROUTING!!!!
 
 app.config ["$httpProvider", ($httpProvider)->
   $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
@@ -29,3 +24,12 @@ app.config ($routeProvider, $locationProvider) ->
       controller: "LandingCtrl"
     ).otherwise redirectTo: "/"
 
+
+
+# FILTERS!!!!!
+
+app.filter("reverse", () ->
+  (input) ->
+    console.log input
+    input.split("").reverse().join("")
+)
